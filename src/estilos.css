@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    top:0;
+    left: 0;
+}
+
+body{
+    background-color: #202124;
+    color:#E8EAED;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.title {
+    font-family: 'Pacifico', cursive;
+    font-weight: 400;
+    font-size: 30px;
+    color: #E8EAED;
+}
+h3{
+    color:#E8EAED
+}
+a {
+    text-decoration: none;
+    color:#E8EAED;
+}
+a:hover{
+    cursor: pointer;
+}
+
+nav{
+    position:relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    width: 100vw;
+    background-color: #303134;
+    z-index: 1;
+ }
+
+ .carrito{
+    font-size: 27px;
+    padding-right:20px;
+    cursor: pointer;
+ }
+
+ .carrito:hover{
+    font-size: 30px;
+    text-shadow: 2px 1px 1px #9032bb;
+ }
