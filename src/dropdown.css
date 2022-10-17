@@ -1,12 +1,14 @@
 /* The container <div> - needed to position the dropdown content */
 .desplegable {
     position: relative;
+    z-index: 1;
     
   }
 
 /* Dropdown Content (Hidden by Default) */
 .contenido-menu {
-    display: none;
+    visibility: hidden;
+    display: flex;
     position: absolute;
     flex-direction: column;
     justify-content: space-around;
@@ -17,6 +19,8 @@
     min-width: 160px;
     margin-top: 70px;    
     height: auto;
+    z-index: 1;
+    
 
     
 }
@@ -35,10 +39,11 @@
 /* Show the dropdown menu on hover */
 
 .desplegable:hover .contenido-menu {
-    display: flex;
+    visibility: visible;
 }
 
 .boton-links{
+    box-sizing: border-box;
     border: none;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
@@ -49,7 +54,7 @@
     height: 70px;
 }
 .boton-links:hover{
-    font-size: 20px;
+    font-size: 19px;
     text-shadow: 1px 1.5px 1px #9032bb;
 }
 

@@ -9,7 +9,6 @@ body{
     background-color: #202124;
     color:#E8EAED;
     font-family: 'Poppins', sans-serif;
-    
 }
 
 .title {
@@ -40,13 +39,14 @@ nav{
     z-index: 1;
  }
 
- .carrito{
+ .contenedor-carrito{
     font-size: 27px;
-    padding-right:20px;
+    margin-right:20px;
     cursor: pointer;
  }
 
- .carrito:hover{
-    font-size: 30px;
+ .contenedor-carrito:hover{
+    transform: scale(1.2);
     text-shadow: 2px 1px 1px #9032bb;
  }
+ 
