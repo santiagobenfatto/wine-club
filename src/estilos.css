@@ -114,6 +114,9 @@ main{
 
 /* Item Detail */
 
+.detail-title{
+    font-size: 2rem;
+}
 .contenedor-detail{
     display:flex;
     flex-direction: row;
@@ -136,4 +139,27 @@ main{
 }
 .btn-contador{
     width:10rem;
+}
+
+/* Contador */
+
+.counter-box{
+    display: flex;
+    width: 100px;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #333333;
+    border-radius: 3px;
+    background-color: #cecece;
+    color: #333333;
+    font-weight: 700;
+}
+button{
+    border: none;
+    background-color: #cecece;
+    color: #333333;
+    font-weight: 700;
+}
+button:hover{
+cursor: pointer;
 }

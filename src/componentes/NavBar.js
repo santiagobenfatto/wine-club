@@ -12,13 +12,15 @@ const NavBar = () => {
         <div className="desplegable">
             <button className="boton-links">Categorias</button>
             <div className="contenido-menu">
+                <NavLink to="/">Todos</NavLink>
                 <NavLink to="/productos/tinto">Tintos</NavLink>
                 <NavLink to="/productos/blanco">Blancos</NavLink>
                 <NavLink to="/productos/espumante">Espumantes</NavLink>
-                <NavLink to="/productos/otros">Otras bebidas...</NavLink>
             </div>
         </div>
+        <NavLink to="/cart">
         <CartWidget />
+        </NavLink>
     </nav>
     </>
     )

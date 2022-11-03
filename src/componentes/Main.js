@@ -1,5 +1,5 @@
 import React from 'react';
-import CartWidget from './CartWidget';
+import Cart from './Cart';
 import ItemListContainer from './ItemListContainer';
 import ItemDetailContainer from './ItemDetailContainer';
 import { Routes, Route } from 'react-router-dom';
@@ -18,7 +18,7 @@ const Main = () => {
 
                 <Route path='/item/:id' element={<ItemDetailContainer/>}/>
 
-                <Route path='/productos/cart' element={<CartWidget/>}/>
+                <Route path='/cart' element={<Cart/>}/>
 
                 <Route path='*' element={<h2>Error 404 - Not Found</h2>}/>
 
