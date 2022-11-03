@@ -1,13 +1,13 @@
 import React from 'react';
 import NavBar from './componentes/NavBar';
-import ItemListContainer from './componentes/ItemListContainer';
-
+import Main from './componentes/Main';
+import { BrowserRouter } from 'react-router-dom';
 const App = () => {
   return (
-    <>
+    <BrowserRouter>
     <NavBar />
-    <ItemListContainer greeting="Hola, soy un Greeting"/>
-    </>
+    <Main />
+    </BrowserRouter>
   );
 }
 
