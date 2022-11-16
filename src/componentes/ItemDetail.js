@@ -1,7 +1,10 @@
 import React from 'react';
 import ItemCount from './ItemCount';
+import { useContext } from 'react';
+import { contexto } from './ContextProvider';
 
 const ItemDetail = ({title, detail, price, img}) => {
+    const valorDelContexto = useContext(contexto)
     return (
         <>
             <img src={img} alt={title} className='img-detail' />
@@ -9,6 +12,7 @@ const ItemDetail = ({title, detail, price, img}) => {
             <h2 className='detail-title'>{title} - ${price}</h2>
             <p>{detail}</p>
             <ItemCount/>
+            {/*falta boton confirmar*/}
             </div>
         </>
     );
