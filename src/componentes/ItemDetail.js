@@ -12,7 +12,6 @@ const ItemDetail = ({title, detail, price, img}) => {
             <h2 className='detail-title'>{title} - ${price}</h2>
             <p>{detail}</p>
             <ItemCount/>
-            {/*falta boton confirmar*/}
             </div>
         </>
     );

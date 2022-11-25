@@ -18,7 +18,7 @@ const ItemCount = () => {
         }
     }
     const confirmarCarrito = (e) => {
-        console.log(e)
+        console.log(e.target)
     }
     
     
