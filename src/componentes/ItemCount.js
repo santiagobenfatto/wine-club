@@ -3,13 +3,14 @@ import React, {useState} from 'react';
 
 
 
-const ItemCount = () => {
+const ItemCount = ({agregarCantidad, inicio}) => {
     
-    const [count, setCount] = useState(0)
-    const addProdcuct = () => {
+    const [count, setCount] = useState(inicio)
+    
+    const suma = () => {
         setCount(count + 1)
     }
-    const subtractProcut = () => {
+    const resta = () => {
         if(count > 0){
             setCount(count -1)
         }
@@ -17,10 +18,10 @@ const ItemCount = () => {
             console.log("you can't buy less than one.")
         }
     }
-    const confirmarCarrito = (e) => {
-        console.log(e.target)
+
+    const confirmarCantidad = () => {
+        agregarCantidad(count)
     }
-    
     
     return (
     <div>
@@ -28,16 +29,14 @@ const ItemCount = () => {
             
         <div className='counter-box'>
 
-            <button className='counter-btn' onClick={addProdcuct}> + </button>
+            <button className='counter-btn' onClick={suma}> + </button>
 
             <p className='counter-num'>{count}</p>
 
-            <button className='counter-btn' onClick={subtractProcut} > - </button>
-
-
+            <button className='counter-btn' onClick={resta} > - </button>
 
         </div>
-        <button className='confirm-btn' onClick={confirmarCarrito}>Confirmar</button>
+        <button className='confirm-btn' onClick={confirmarCantidad}>Confirmar</button>
     </div>
 
     )

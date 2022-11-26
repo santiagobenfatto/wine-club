@@ -74,6 +74,15 @@ main{
     transform: scale(1.2);
     text-shadow: 2px 1px 1px #9032bb;
  }
+
+ .tabla-carrito {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);    
+
+ }
+
+
+
 .loading {
     text-align: center;
 }

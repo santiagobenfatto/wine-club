@@ -2,33 +2,32 @@ import React from 'react';
 import ItemDetail from './ItemDetail';
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
-import { getDetailsById } from './utils';
+import { db } from '../firebase';
+import { collection, doc, getDoc } from 'firebase/firestore';
 
 
 const ItemDetailContainer = () => {
     
     const [item, setItem] = useState({})
-
-    const {id} = useParams()
+    const { id } = useParams()
 
     useEffect(()=>{
         
-        setItem({})
+        const coleccionProductos = collection(db, 'productos')
+        const getProductsById = doc(coleccionProductos, id)
+        const consultaFetch = getDoc(getProductsById)
 
-        getDetailsById(id)
-            .then(res=> {
-                setItem(res)
+        consultaFetch
+        .then((respuesta)=>{
+            setItem(respuesta.data())
         })
-        .catch((err)=>{
-            console.log(err)
-        })
+        .catch((error)=>{console.log(error)})       
 
     },[id])
 
     return (
         <div className='contenedor-detail'>
-        {
-         Object.keys(item).length === 0 ? <h1 className='loading'>Cargando...</h1> : <ItemDetail {...item}/>}
+        {Object.keys(item).length === 0 ? <h1 className='loading'>Cargando...</h1> : <ItemDetail producto={{id, ...item}}/>}
         </div>
     );
 }

@@ -1,17 +1,31 @@
 import React from 'react';
 import ItemCount from './ItemCount';
-import { useContext } from 'react';
-import { contexto } from './ContextProvider';
+import { useCarrito } from './ContextProvider';
+import { useState } from 'react';
 
-const ItemDetail = ({title, detail, price, img}) => {
-    const valorDelContexto = useContext(contexto)
+
+const ItemDetail = ({producto}) => {
+    
+    const {addToCart} = useCarrito()
+    const [cantidad, setCantidad] = useState(1)
+    
+    const agregarCantidad = (cantidad) =>{
+        setCantidad(cantidad)
+    }
+
+    const agregarAlCarrito = () =>{
+        addToCart(producto, cantidad)
+    }
+
+
     return (
         <>
-            <img src={img} alt={title} className='img-detail' />
+            <img src={producto.img} alt={producto.title} className='img-detail' />
             <div className='contenedor-precio-titulo-detail'>
-            <h2 className='detail-title'>{title} - ${price}</h2>
-            <p>{detail}</p>
-            <ItemCount/>
+            <h2 className='detail-title'>{producto.title} - ${producto.price}</h2>
+            <p>{producto.detail}</p>
+            <ItemCount agregarCantidad={agregarCantidad} inicio={cantidad}/>
+            <button onClick={agregarAlCarrito}>Agregar al Carrito</button>
             </div>
         </>
     );

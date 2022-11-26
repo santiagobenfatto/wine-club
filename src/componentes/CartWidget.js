@@ -1,16 +1,15 @@
 import React from "react";
-import { useContext } from "react";
-import { contexto } from "./ContextProvider";
+import { useCarrito } from "./ContextProvider";
 
 
 const CartWidget = () => {
     
-    const valorDelContexto = useContext(contexto)
+    const contexto = useCarrito()
 
     return(
         <div className="contenedor-carrito">
         <span className="material-icons carrito">shopping_cart</span>
-        <span>{valorDelContexto.cantidad}</span>
+        <span>{contexto.cantidad}</span>
         </div>
         
     )

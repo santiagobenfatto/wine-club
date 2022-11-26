@@ -8,32 +8,34 @@ export const useCarrito = () => {
 }
 
 
-
 const ContextProvider = ({children}) => {
         const [carrito, setCarrito] = useState([])        
-        const [totalUnidades, setTotalUnidades] = useState(5)
+        const [precioTotal, setPrecioTotal] = useState(0)
+        const [unidades, setUnidades] = useState(0)
 
-        //const [precioTotal, setPrecioTotal] = useState(0)
 
         const addToCart = (producto, cantidad) => {
             setCarrito([
                 ...carrito,
                 { ...producto, cantidad }
             ])
+            setPrecioTotal(precioTotal + producto.price * unidades)
+            setUnidades(unidades + cantidad)
         }
 
         const vaciarCarrito = () => {
             setCarrito([])
-            setTotalUnidades(0)
+            setUnidades(0)
         }
 
         const valorDelContexto = {
             productos: carrito,
-            cantidad: totalUnidades,
+            cantidad: unidades,
+            precioTotal: precioTotal,
             vaciarCarrito: vaciarCarrito,
             addToCart: addToCart, 
         }
-    
+
         return (
             <Provider value={valorDelContexto}>
                 {children}
