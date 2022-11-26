@@ -19,8 +19,8 @@ const ContextProvider = ({children}) => {
                 ...carrito,
                 { ...producto, cantidad }
             ])
-            setPrecioTotal(precioTotal + producto.price * unidades)
             setUnidades(unidades + cantidad)
+            setPrecioTotal(precioTotal + producto.price * cantidad)
         }
 
         const vaciarCarrito = () => {

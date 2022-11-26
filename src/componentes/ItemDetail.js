@@ -8,9 +8,11 @@ const ItemDetail = ({producto}) => {
     
     const {addToCart} = useCarrito()
     const [cantidad, setCantidad] = useState(1)
+    const [validado, setValidado] = useState(false)
     
     const agregarCantidad = (cantidad) =>{
         setCantidad(cantidad)
+        setValidado(true)
     }
 
     const agregarAlCarrito = () =>{
@@ -25,7 +27,7 @@ const ItemDetail = ({producto}) => {
             <h2 className='detail-title'>{producto.title} - ${producto.price}</h2>
             <p>{producto.detail}</p>
             <ItemCount agregarCantidad={agregarCantidad} inicio={cantidad}/>
-            <button onClick={agregarAlCarrito}>Agregar al Carrito</button>
+            {validado && <button onClick={agregarAlCarrito}>Agregar al Carrito</button>}
             </div>
         </>
     );
