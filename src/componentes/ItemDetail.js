@@ -19,7 +19,6 @@ const ItemDetail = ({producto}) => {
         addToCart(producto, cantidad)
     }
 
-
     return (
         <>
             <img src={producto.img} alt={producto.title} className='img-detail' />

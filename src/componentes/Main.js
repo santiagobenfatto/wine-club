@@ -1,8 +1,9 @@
 import React from 'react';
-import Cart from './Cart';
 import ItemListContainer from './ItemListContainer';
 import ItemDetailContainer from './ItemDetailContainer';
+import Compra from './Compra';
 import { Routes, Route } from 'react-router-dom';
+import CartContainer from './CartContainer';
 
 
 const Main = () => {
@@ -17,8 +18,10 @@ const Main = () => {
                 <Route path='/productos/:category' element={<ItemListContainer/>}/>
 
                 <Route path='/item/:id' element={<ItemDetailContainer/>}/>
+        
+                <Route path='/cart/compra' element={<Compra/>}/>
 
-                <Route path='/cart' element={<Cart/>}/>
+                <Route path='/cart' element={<CartContainer/>}/>
 
                 <Route path='*' element={<h2>Error 404 - Not Found</h2>}/>
 

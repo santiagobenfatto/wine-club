@@ -14,26 +14,38 @@ const ContextProvider = ({children}) => {
         const [unidades, setUnidades] = useState(0)
 
 
-        const addToCart = (producto, cantidad) => {
+        const addToCart = (producto, cantidad) => {          
+            
+            
             setCarrito([
                 ...carrito,
-                { ...producto, cantidad }
+                { ...producto, cantidad}
             ])
             setUnidades(unidades + cantidad)
             setPrecioTotal(precioTotal + producto.price * cantidad)
         }
 
+        //FUNCION AGREGAR PRODUCTO QUE YA ESTABA
+
         const vaciarCarrito = () => {
             setCarrito([])
             setUnidades(0)
+            setPrecioTotal(0)
         }
+
+
+        //FUNCION QUITAR PRODUCTO COMPLETO
+
+        //FUNCION QUITAR PRODUCTO X UNIDAD
+
+
 
         const valorDelContexto = {
             productos: carrito,
             cantidad: unidades,
             precioTotal: precioTotal,
             vaciarCarrito: vaciarCarrito,
-            addToCart: addToCart, 
+            addToCart: addToCart
         }
 
         return (

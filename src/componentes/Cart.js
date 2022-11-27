@@ -1,15 +1,17 @@
 import React from 'react';
 import { useCarrito } from "./ContextProvider"
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
     
     const contexto = useCarrito()
+    const {vaciarCarrito} = useCarrito()
     const cart  = contexto.productos
     const Total = contexto.precioTotal
     
     return (
         <div className='contenedor'>
-            <h2>Aquí habrá un Carrito.</h2>
+            <h2>Su carrito contiene:</h2>
             <div className='tabla-carrito'>
             <p>Producto</p>
             <p>Cantidad</p>
@@ -22,11 +24,16 @@ const Cart = () => {
                      <p>{prod.title}</p>
                      <p>{prod.cantidad}</p>
                      <p>{prod.price}</p>
+                     <button className='material-icons'>delete</button>
                     </div>
                 )})
             }
             <hr />
+            <button onClick={vaciarCarrito}>Vaciar Carrito</button>
             <p className='total-carrito'>Precio Total: ${Total}</p>
+            <Link to="/cart/compra">
+            <button>Confirmar compra</button>
+            </Link>
         </div>
         );
 }
