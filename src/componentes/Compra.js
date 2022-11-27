@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { useCarrito } from './ContextProvider';
 import { db } from '../firebase';
-
+import { toast } from "react-toastify"
 
 
 
@@ -40,9 +40,10 @@ const Compra = () => {
         setOrdenes
         .then((orden) => {
             setId(orden.id)
+            toast.success("Cargando orden de compra...")
         })
         .catch((error)=>{
-            console.log(error)
+            toast.error(error)
         })
         
         limpiarFormulario(e)
@@ -71,7 +72,7 @@ const Compra = () => {
                 
 
                 {active ? <p>Los emails no coinciden!</p> : null}
-                <button>Cargar orden</button>
+                <button className='btn-vaciado'>Cargar orden</button>
                 
             </form>
             </div>}

@@ -10,7 +10,7 @@ const Cart = () => {
     const Total = contexto.precioTotal
     
     return (
-        <div className='contenedor'>
+        <div className='contenedor-cart'>
             <h2>Su carrito contiene:</h2>
             <div className='tabla-carrito'>
             <p>Producto</p>
@@ -28,11 +28,16 @@ const Cart = () => {
                 )})
             }
             <hr />
-            <button onClick={vaciarCarrito}>Vaciar Carrito</button>
-            <p className='total-carrito'>Precio Total: ${Total}</p>
-            <Link to="/cart/compra">
-            <button>Confirmar compra</button>
-            </Link>
+            <div className='tabla-carrito'>
+                <Link to="/cart/compra">
+                <button className='btn-compra'>Confirmar compra</button>
+                </Link>
+            
+                <button onClick={vaciarCarrito} className='btn-vaciado'>Vaciar Carrito</button>
+                
+
+                <p>Precio Total: ${Total}</p>
+            </div>
         </div>
         );
 }
