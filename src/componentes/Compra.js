@@ -9,6 +9,7 @@ const Compra = () => {
 
     const carrito = useCarrito()
     const productos = carrito.productos
+    const { vaciarCarrito }= carrito 
     const nombreComprador = useRef('')
     const mailComprador = useRef('')
     const mailValidacion = useRef('')
@@ -17,6 +18,10 @@ const Compra = () => {
     
     const submitFunction = (e) => {     
         e.preventDefault()
+
+        if(mailComprador.current.value !== mailValidacion.current.value){
+            console.log("Los emails no coinciden")
+        } else {
 
         const ordenCompra = {
             comprador: {
@@ -36,9 +41,15 @@ const Compra = () => {
         .catch((error)=>{
             console.log(error)
         })
+        
+        limpiarFormulario(e)
+    }
     }        
     
-    
+    const limpiarFormulario = (e) =>{
+        vaciarCarrito()
+        e.target.reset()
+    }
     
     return (
         <div className='contenedor'>
@@ -47,11 +58,11 @@ const Compra = () => {
             
             <form onSubmit={submitFunction} className='formulario-compra'>
             
-                <input ref={nombreComprador} type="text" placeholder='Nombre' className='input-form'></input>
+                <input ref={nombreComprador} type="text" placeholder='Nombre' className='input-form' required />
             
-                <input ref={mailComprador} type="email" placeholder='mail@mail.com' className='input-form email-form' />
+                <input ref={mailComprador} type="email" placeholder='mail@mail.com' className='input-form email-form' required/>
 
-                <input ref={mailValidacion} type="email" placeholder='mail@mail.com' className='input-form email-form' />
+                <input ref={mailValidacion} type="email" placeholder='mail@mail.com' className='input-form email-form' required/>
                 
                 <button>Cargar orden</button>
                 

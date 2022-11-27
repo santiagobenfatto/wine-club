@@ -7,7 +7,6 @@ export const useCarrito = () => {
     return useContext(contexto)
 }
 
-
 const ContextProvider = ({children}) => {
         const [carrito, setCarrito] = useState([])        
         const [precioTotal, setPrecioTotal] = useState(0)
@@ -16,29 +15,29 @@ const ContextProvider = ({children}) => {
 
         const addToCart = (producto, cantidad) => {          
             
+            const isInCart = carrito.find(prod=> prod.id === producto.id)
             
+            if(isInCart){
+                setCarrito(carrito.map((element) => {
+                    if(element.id === isInCart.id) {
+                        return {...isInCart, cantidad: isInCart.cantidad + cantidad}
+                    }else return element
+                }))
+            } else {
             setCarrito([
                 ...carrito,
                 { ...producto, cantidad}
             ])
-            setUnidades(unidades + cantidad)
-            setPrecioTotal(precioTotal + producto.price * cantidad)
         }
-
-        //FUNCION AGREGAR PRODUCTO QUE YA ESTABA
+        setUnidades(unidades + cantidad)
+        setPrecioTotal(precioTotal + producto.price * cantidad)
+        }
 
         const vaciarCarrito = () => {
             setCarrito([])
             setUnidades(0)
             setPrecioTotal(0)
         }
-
-
-        //FUNCION QUITAR PRODUCTO COMPLETO
-
-        //FUNCION QUITAR PRODUCTO X UNIDAD
-
-
 
         const valorDelContexto = {
             productos: carrito,
