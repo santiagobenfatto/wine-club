@@ -18,6 +18,7 @@ Se basa en el desarrollo de un e-commerce de tipo SPA (Single Page Application),
 
 ####Librerías o dependencias
 
+
 ````
 "@testing-library/jest-dom": "^5.16.5",
 "@testing-library/react": "^13.4.0",
@@ -32,15 +33,30 @@ Se basa en el desarrollo de un e-commerce de tipo SPA (Single Page Application),
 
 ````
 
+La aplicación fue creada mediante
+
+````
+create-react-app <name>
+````
+
+
+Para la navegabiliad de la aplicación se eligió utilizar la librería 'react-router-dom', intalada de la siguiente manera:
+
+````
+npm install react-router-dom
+````
+
+Para alojar los productos y las ordenes requeridas durante el proceso de compra, se utilizó la base de datos de [Firebase Cloud Firestore](https://firebase.google.com/)
+
 
 
 ##Visualización del proyecto
 
-Para acceder al proyecto se puede realizar a través del siguiente link, el cual fue alojado en el servicio Netlify:
+Para acceder al proyecto se puede realizar a través del siguiente link, el cual fue alojado en el servicio Vercel:
 
-[Link al vercel]
+Ir a la página: [Wine club](https://wine-club-livid.vercel.app)
 
-[Aquí poner una imagen]
+![Vitazo_general](/public/img/vistazo-general.gif)
 
 
 ###Instalación
@@ -64,6 +80,19 @@ Y por último en la misma línea de comandos, se da inicio con el comando:
 npm start
 ````
 
-##Usabilidad
+##Proceso de compra
 
+####Navagación entre categorías
+
+![Navegacion_categorias](/public/img/navegacion-categorias.gif)
+
+
+####Agregar productos al carrito
+
+![Carga_productos](/public/img/agregando-productos.gif)
+
+
+####Confirmación y carga de datos
+
+![Carga_Datos](/public/img/formulario.gif)
 
