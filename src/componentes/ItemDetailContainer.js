@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import { db } from '../firebase';
 import { collection, doc, getDoc } from 'firebase/firestore';
-
+import { toast } from "react-toastify"
 
 const ItemDetailContainer = () => {
     
@@ -21,7 +21,7 @@ const ItemDetailContainer = () => {
         .then((respuesta)=>{
             setItem(respuesta.data())
         })
-        .catch((error)=>{console.log(error)})       
+        .catch((error)=>{toast.error(error)})       
 
     },[id])
 

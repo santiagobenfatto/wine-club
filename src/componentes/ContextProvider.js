@@ -33,6 +33,7 @@ const ContextProvider = ({children}) => {
         setPrecioTotal(precioTotal + producto.price * cantidad)
         }
 
+
         const vaciarCarrito = () => {
             setCarrito([])
             setUnidades(0)

@@ -11,11 +11,8 @@ const ItemCount = ({agregarCantidad, inicio}) => {
         setCount(count + 1)
     }
     const resta = () => {
-        if(count > 0){
+        if(count > 1){
             setCount(count -1)
-        }
-        else{
-            console.log("you can't buy less than one.")
         }
     }
 
@@ -36,7 +33,7 @@ const ItemCount = ({agregarCantidad, inicio}) => {
             <button className='counter-btn' onClick={resta} > - </button>
 
         </div>
-        <button className='confirm-btn' onClick={confirmarCantidad}>Confirmar</button>
+        <button className='counter-box' onClick={confirmarCantidad}>Confirmar</button>
     </div>
 
     )

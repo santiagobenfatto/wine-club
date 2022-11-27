@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "../firebase";
+import { toast } from "react-toastify"
+
 
 
 const ItemListContainer = () => {
@@ -26,7 +28,7 @@ const ItemListContainer = () => {
                     setItems(productosFirebase)
                 })
                 .catch((error) => {
-                    console.log(error)
+                    toast.error(error)
                 })
 
         }else{
@@ -38,7 +40,7 @@ const ItemListContainer = () => {
             const productosFirebase = respuesta.docs.map(prod => ({...prod.data(), id: prod.id}))
             setItems(productosFirebase)
         })
-        .catch((error)=>{console.log(error)})
+        .catch((error)=>{console.error(error)})
         }
 
     }, [category])

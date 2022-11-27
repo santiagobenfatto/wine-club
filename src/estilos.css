@@ -165,7 +165,7 @@ main{
     padding: 1rem;
 }
 .img-detail{
-    height: 70%;
+    height: 300px;
 }
 .btn-contador{
     width:10rem;
@@ -175,11 +175,12 @@ main{
 
 .counter-box{
     display: flex;
-    width: 100px;
+    width: 150px;
+    height:30px;
     justify-content: space-around;
     align-items: center;
     border: 1px solid #333333;
-    border-radius: 3px;
+    border-radius: 7px;
     background-color: #cecece;
     color: #333333;
     font-weight: 700;
@@ -193,3 +194,4 @@ button{
 button:hover{
 cursor: pointer;
 }
+

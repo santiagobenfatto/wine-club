@@ -5,6 +5,9 @@ import { db } from '../firebase';
 
 
 
+
+
+
 const Compra = () => {
 
     const carrito = useCarrito()
@@ -14,13 +17,13 @@ const Compra = () => {
     const mailComprador = useRef('')
     const mailValidacion = useRef('')
     const [id, setId] = useState('')
-    
+    const [active, setActive] = useState(null)
     
     const submitFunction = (e) => {     
         e.preventDefault()
 
         if(mailComprador.current.value !== mailValidacion.current.value){
-            console.log("Los emails no coinciden")
+            setActive(true)
         } else {
 
         const ordenCompra = {
@@ -47,26 +50,32 @@ const Compra = () => {
     }        
     
     const limpiarFormulario = (e) =>{
+        setActive(null)
         vaciarCarrito()
         e.target.reset()
     }
     
     return (
         <div className='contenedor'>
-            {id ? <h1>Orden generada con exito, su id es {id}</h1> : null}
+            {id ? <h1>Orden generada con exito, su id es {id}</h1> :    
+            <div className='formulario-container'>
             <h2>Ingresa tus datos para realizar la compra</h2>
             
             <form onSubmit={submitFunction} className='formulario-compra'>
-            
+                <p>Ingresa tus datos</p>
                 <input ref={nombreComprador} type="text" placeholder='Nombre' className='input-form' required />
             
                 <input ref={mailComprador} type="email" placeholder='mail@mail.com' className='input-form email-form' required/>
-
+                
                 <input ref={mailValidacion} type="email" placeholder='mail@mail.com' className='input-form email-form' required/>
                 
+
+                {active ? <p>Los emails no coinciden!</p> : null}
                 <button>Cargar orden</button>
                 
             </form>
+            </div>}
+         
         </div>
     );
 }

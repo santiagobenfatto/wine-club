@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Cart = () => {
     
     const contexto = useCarrito()
-    const {vaciarCarrito} = useCarrito()
+    const { vaciarCarrito } = useCarrito()
     const cart  = contexto.productos
     const Total = contexto.precioTotal
     
@@ -24,7 +24,6 @@ const Cart = () => {
                      <p>{prod.title}</p>
                      <p>{prod.cantidad}</p>
                      <p>{prod.price}</p>
-                     <button className='material-icons'>delete</button>
                     </div>
                 )})
             }

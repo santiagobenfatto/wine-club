@@ -1,70 +1,69 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Proyecto Final ReactJs 
+======
 
-In the project directory, you can run:
+Alumno: Santiago Nicolás Benfatto
+Comisión: 34790
 
-### `npm start`
+##Descripción
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+El proyecto está propuesto por la academia CODER-HOUSE, se debe realizar a modo de entrega final luego de haber finalizado el curso de ReactJs.
+Se basa en el desarrollo de un e-commerce de tipo SPA (Single Page Application), con el fin de aprender e implementar los conceptos básicos de la tecnología referida y demostrar su aplicación de manera práctica lo mas cercana a un proyecto real.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+####Tecnologías utilizadas
 
-### `npm test`
+![HTML](https://camo.githubusercontent.com/b9fe9f8e52c6fd30d814c24f3eb71cb09d7f5bc82d7f67a384055de93fdbb0bf/68747470733a2f2f696d672e69636f6e73382e636f6d2f636f6c6f722f34382f3030303030302f68746d6c2d352d2d76312e706e67)![CSS](https://camo.githubusercontent.com/dc75aee770dff630309493116eeebd6a39c7042e4e94780a5e6c8f107bebe76f/68747470733a2f2f696d672e69636f6e73382e636f6d2f636f6c6f722f34382f3030303030302f637373332e706e67)![JAVASCRIPT](https://camo.githubusercontent.com/84c2586aa67309f6fa224fdf5fdf33a633239375397a8e753ac1e7cc727f5458/68747470733a2f2f696d672e69636f6e73382e636f6d2f636f6c6f722f34382f3030303030302f6a6176617363726970742d2d76312e706e67)![ReacjtJs](https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-42.png)![NPM](https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/npm-42.png)![Firebase](https://cdn4.iconfinder.com/data/icons/google-i-o-2016/512/google_firebase-42.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+####Librerías o dependencias
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+````
+"@testing-library/jest-dom": "^5.16.5",
+"@testing-library/react": "^13.4.0",
+"@testing-library/user-event": "^13.5.0",
+"firebase": "^9.14.0",
+"react": "^18.2.0",
+"react-dom": "^18.2.0",
+"react-router-dom": "^6.4.3",
+"react-scripts": "5.0.1",
+"react-toastify": "^9.1.1",
+"web-vitals": "^2.1.4"
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+````
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+##Visualización del proyecto
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Para acceder al proyecto se puede realizar a través del siguiente link, el cual fue alojado en el servicio Netlify:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+[Link al vercel]
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+[Aquí poner una imagen]
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+###Instalación
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+También se puede acceder clonando el respositorio de github, utilizando el enlace de la siguiente manera:
 
-### Code Splitting
+````
+git clone https://github.com/santiagobenfatto/wine-club
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+````
 
-### Analyzing the Bundle Size
+En el mismo directorio donde fue clonado se debe instalar el Node Package Manager (npm):
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+````
+npm install
+````
 
-### Making a Progressive Web App
+Y por último en la misma línea de comandos, se da inicio con el comando:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+````
+npm start
+````
 
-### Advanced Configuration
+##Usabilidad
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
