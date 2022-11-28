@@ -8,6 +8,7 @@ export const useCarrito = () => {
 }
 
 const ContextProvider = ({children}) => {
+        
         const [carrito, setCarrito] = useState([])        
         const [precioTotal, setPrecioTotal] = useState(0)
         const [unidades, setUnidades] = useState(0)
@@ -40,6 +41,7 @@ const ContextProvider = ({children}) => {
             setPrecioTotal(0)
         }
 
+        
         const valorDelContexto = {
             productos: carrito,
             cantidad: unidades,

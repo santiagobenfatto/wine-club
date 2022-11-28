@@ -1,9 +1,6 @@
 import React from 'react';
 import Item from './Item';
 
-
-
-{/* EL ITEMS DE LOS PARAMS VIENE DEL ITEMLISTCONTAINER:D */}
 const ItemList = ({items}) => {
     return (
         <div className='contenedor-items'>
@@ -14,9 +11,6 @@ const ItemList = ({items}) => {
         }
         </div>
     )
-   
-
 }
-
 
 export default ItemList;

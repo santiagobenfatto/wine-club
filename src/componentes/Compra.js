@@ -2,10 +2,7 @@ import React, { useRef, useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { useCarrito } from './ContextProvider';
 import { db } from '../firebase';
-import { toast } from "react-toastify"
-
-
-
+import { toast } from "react-toastify";
 
 
 const Compra = () => {
@@ -47,14 +44,15 @@ const Compra = () => {
         })
         
         limpiarFormulario(e)
-    }
-    }        
+    }}        
     
+
     const limpiarFormulario = (e) =>{
         setActive(null)
         vaciarCarrito()
         e.target.reset()
     }
+    
     
     return (
         <div className='contenedor'>

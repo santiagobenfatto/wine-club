@@ -1,9 +1,6 @@
 import React, {useState} from 'react';
 
 
-
-
-
 const ItemCount = ({agregarCantidad, inicio}) => {
     
     const [count, setCount] = useState(inicio)

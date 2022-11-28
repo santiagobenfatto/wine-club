@@ -26,7 +26,6 @@ const Main = () => {
                 <Route path='*' element={<h2>Error 404 - Not Found</h2>}/>
 
             </Routes>
-
         </main>
     );
 }
